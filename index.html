@@ -603,9 +603,7 @@
               </p>
             </div>
 
-            <div class="text-center pt-4">
-              <h2 class="text-4xl sm:text-6xl font-bold text-white">Questions?</h2>
-            </div>
+
           </div>
         `;
       }
@@ -616,21 +614,21 @@
             <i data-lucide="chevron-left" class="w-6 h-6"></i>
           </button>
           
-          <div class="flex gap-1.5 sm:gap-2">
-            ${slides.map((_, i) => `
-              <button onclick="goTo(${i})" 
-                class="h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 sm:w-12 bg-emerald-500' : 'w-1.5 sm:w-2 bg-gray-700 hover:bg-gray-600'}" 
-                aria-label="Go to slide ${i + 1}">
-              </button>
-            `).join('')}
+          <div class="flex flex-col items-center gap-1.5">
+            <div class="flex gap-1.5 sm:gap-2">
+              ${slides.map((_, i) => `
+                <button onclick="goTo(${i})" 
+                  class="h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 sm:w-12 bg-emerald-500' : 'w-1.5 sm:w-2 bg-gray-700 hover:bg-gray-600'}" 
+                  aria-label="Go to slide ${i + 1}">
+                </button>
+              `).join('')}
+            </div>
+            <div class="text-gray-600 text-xs font-mono">${current + 1} / ${slides.length}</div>
           </div>
           
           <button onclick="next()" class="p-2 hover:bg-gray-800 rounded-full transition-colors text-gray-400 hover:text-white disabled:opacity-30" ${current === slides.length - 1 ? 'disabled' : ''}>
             <i data-lucide="chevron-right" class="w-6 h-6"></i>
           </button>
-        </div>
-        <div class="fixed bottom-4 sm:bottom-5 left-1/2 transform -translate-x-1/2 text-gray-600 text-xs font-mono pointer-events-none z-50 mt-1">
-          ${current + 1} / ${slides.length}
         </div>
       `;
 
