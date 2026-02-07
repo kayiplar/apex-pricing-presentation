@@ -255,7 +255,7 @@
                   <tr class="hover:bg-gray-800/50 transition-colors">
                     <td class="p-4 font-medium text-white">Videos per human-hour</td>
                     <td class="p-4">16</td>
-                    <td class="p-4 text-emerald-400 font-bold">2,400</td>
+                    <td class="p-4 text-emerald-400 font-bold">2,400 <span class="text-xs text-emerald-300 ml-1">(14,900% faster)</span></td>
                   </tr>
                   <tr class="hover:bg-gray-800/50 transition-colors">
                     <td class="p-4 font-medium text-white">Batch automation</td>
@@ -266,10 +266,9 @@
               </table>
             </div>
 
-            <div class="bg-emerald-900/20 border border-emerald-500/30 p-6 rounded-xl text-center">
-              <p class="text-lg sm:text-xl text-emerald-100 font-medium">
-                54-85% cheaper total cost of ownership depending on labor rate
-              </p>
+            <div class="bg-emerald-900/20 border border-emerald-500/30 p-6 rounded-xl text-center space-y-1">
+              <p class="text-2xl sm:text-3xl text-emerald-400 font-bold">150x more productive per human-hour</p>
+              <p class="text-base sm:text-lg text-emerald-100/70">54-85% cheaper total cost of ownership depending on labor rate</p>
             </div>
             
             <p class="text-center text-xs text-gray-600">Comparison based on 1,200 Kling 2.1 Videos + Nano Banana Pro Images per month</p>
@@ -324,7 +323,7 @@
         content = `
           <div class="flex flex-col h-full justify-center space-y-8">
             <div class="space-y-2 text-center">
-              <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Proposed Model</p>
+              <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Pricing</p>
               <h2 class="text-3xl sm:text-4xl font-bold leading-tight">Simple, scalable pricing</h2>
             </div>
 
@@ -432,10 +431,8 @@
             <div class="space-y-4">
               <p class="text-xl sm:text-2xl text-white font-medium text-center">The subscription fee is where the real margin lives — not the credits.</p>
               <div class="flex items-center justify-center gap-4 text-sm sm:text-base text-gray-400">
-                <span>Old margin: 5%</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                <span>New margin on credits: 20%</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <span>Credit margin: 20%</span>
+                <i data-lucide="plus" class="w-4 h-4"></i>
                 <span class="text-emerald-400 font-bold">Subscription: pure profit ($200/mo)</span>
               </div>
             </div>
@@ -486,15 +483,15 @@
                 </div>
               </div>
 
-              <!-- Comparison -->
+              <!-- Margin Summary -->
               <div class="w-full sm:w-1/3 bg-gray-900 border border-gray-800 p-6 rounded-xl space-y-4">
-                <h3 class="text-gray-400 text-sm uppercase tracking-wide font-bold">Comparison</h3>
-                <div class="p-4 bg-gray-800 rounded-lg border border-gray-700">
-                  <div class="text-xs text-gray-400 mb-1">vs. today: same user, no subscription</div>
-                  <div class="text-2xl font-bold text-white">$56/mo margin</div>
-                  <div class="text-sm text-gray-500">(5% margin)</div>
+                <h3 class="text-gray-400 text-sm uppercase tracking-wide font-bold">Margin Summary</h3>
+                <div class="p-4 bg-emerald-900/20 rounded-lg border border-emerald-500/30">
+                  <div class="text-xs text-gray-400 mb-1">Per Pro subscriber</div>
+                  <div class="text-2xl font-bold text-emerald-400">~$300/mo margin</div>
+                  <div class="text-sm text-gray-500">(37.5% blended)</div>
                 </div>
-                <div class="text-emerald-400 font-bold text-lg">That's a 5.4x improvement in margin per user.</div>
+                <div class="text-white font-bold text-lg">$200 subscription + $100 credit markup</div>
               </div>
             </div>
           </div>
@@ -617,9 +614,8 @@
 
             <div class="bg-emerald-900/20 border border-emerald-500/30 p-6 rounded-xl text-center">
               <p class="text-lg sm:text-xl text-emerald-100 font-medium">
-                Current model: <span class="text-white font-bold">$56/mo</span> margin per user. 
-                New model: <span class="text-emerald-400 font-bold">$300/mo</span>. 
-                <span class="text-emerald-400 font-bold uppercase tracking-wide ml-2">5.4× the margin.</span>
+                <span class="text-emerald-400 font-bold">~$300/mo margin</span> per Pro subscriber.
+                <span class="text-emerald-400 font-bold uppercase tracking-wide ml-2">37.5% blended margin.</span>
               </p>
             </div>
 
