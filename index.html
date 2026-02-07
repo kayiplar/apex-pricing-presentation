@@ -25,7 +25,8 @@
       { type: 'problem' },
       { type: 'research' },
       { type: 'solution' },
-      { type: 'current-state' },
+      { type: 'competitive' },
+      { type: 'value-prop' },
       { type: 'pricing-tiers' },
       { type: 'unit-economics' },
       { type: 'revenue-per-user' },
@@ -216,137 +217,165 @@
         `;
       }
 
-      // Slide 5: Current State
-      if (slide.type === 'current-state') {
+      // Slide 5: Competitive Analysis
+      if (slide.type === 'competitive') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
             <div class="space-y-2">
-              <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Current State</p>
-              <h2 class="text-3xl sm:text-5xl font-bold leading-tight">Today: Pay-as-you-go credits at 5% margin.</h2>
+              <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Competitive Analysis</p>
+              <h2 class="text-3xl sm:text-5xl font-bold leading-tight">How we compare to the #1 competitor</h2>
+              <p class="text-xl text-gray-400">Higgsfield: $200M run rate, backed by VC. But they can't automate.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                  <span class="w-2 h-8 bg-gray-600 rounded-full"></span>
-                  What we have
-                </h3>
-                <ul class="space-y-4 text-lg text-gray-300">
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="check" class="w-6 h-6 text-gray-500 mt-0.5"></i>
-                    <span>Credit packs: $10–$100</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="check" class="w-6 h-6 text-gray-500 mt-0.5"></i>
-                    <span>1 credit = $0.01</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="check" class="w-6 h-6 text-gray-500 mt-0.5"></i>
-                    <span>5% margin over fal.ai costs</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="check" class="w-6 h-6 text-gray-500 mt-0.5"></i>
-                    <span>No subscription, no recurring revenue</span>
-                  </li>
-                </ul>
-              </div>
+            <div class="overflow-hidden rounded-xl border border-gray-800">
+              <table class="w-full text-left border-collapse bg-gray-900">
+                <thead>
+                  <tr class="bg-gray-950 border-b border-gray-800 text-gray-400 text-sm uppercase tracking-wider">
+                    <th class="p-4 font-semibold">Metric</th>
+                    <th class="p-4 font-semibold">Higgsfield Creator ($37.40/mo)</th>
+                    <th class="p-4 font-semibold text-emerald-400">APEX Pro ($500/mo)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800 text-gray-300">
+                  <tr class="hover:bg-gray-800/50 transition-colors">
+                    <td class="p-4 font-medium text-white">Raw credit cost</td>
+                    <td class="p-4">$37.40 (subsidized)</td>
+                    <td class="p-4 text-emerald-400 font-bold">$300 included</td>
+                  </tr>
+                  <tr class="hover:bg-gray-800/50 transition-colors">
+                    <td class="p-4 font-medium text-white">Human time required</td>
+                    <td class="p-4">75 hours/month</td>
+                    <td class="p-4 text-emerald-400 font-bold">~30 minutes</td>
+                  </tr>
+                  <tr class="hover:bg-gray-800/50 transition-colors">
+                    <td class="p-4 font-medium text-white">Total Cost (credits + labor at €12.82/h)</td>
+                    <td class="p-4">$37 + $1,040 labor = $1,077</td>
+                    <td class="p-4 text-emerald-400 font-bold">$500 all-in</td>
+                  </tr>
+                  <tr class="hover:bg-gray-800/50 transition-colors">
+                    <td class="p-4 font-medium text-white">Videos per human-hour</td>
+                    <td class="p-4">16</td>
+                    <td class="p-4 text-emerald-400 font-bold">2,400</td>
+                  </tr>
+                  <tr class="hover:bg-gray-800/50 transition-colors">
+                    <td class="p-4 font-medium text-white">Batch automation</td>
+                    <td class="p-4 text-red-400">No</td>
+                    <td class="p-4 text-emerald-400 font-bold">Yes (one-click)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                  <span class="w-2 h-8 bg-red-500/50 rounded-full"></span>
-                  The problem
-                </h3>
-                <ul class="space-y-4 text-lg text-gray-300">
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="x" class="w-6 h-6 text-red-500/70 mt-0.5"></i>
-                    <span>Nearly zero margin on every generation</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="x" class="w-6 h-6 text-red-500/70 mt-0.5"></i>
-                    <span>No revenue predictability</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="x" class="w-6 h-6 text-red-500/70 mt-0.5"></i>
-                    <span>Power users generate $1,000–2,000/mo in volume — we keep ~$50–100</span>
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <i data-lucide="x" class="w-6 h-6 text-red-500/70 mt-0.5"></i>
-                    <span>No incentive for user commitment</span>
-                  </li>
-                </ul>
+            <div class="bg-emerald-900/20 border border-emerald-500/30 p-6 rounded-xl text-center">
+              <p class="text-lg sm:text-xl text-emerald-100 font-medium">
+                54-85% cheaper total cost of ownership depending on labor rate
+              </p>
+            </div>
+            
+            <p class="text-center text-xs text-gray-600">Comparison based on 1,200 Kling 2.1 Videos + Nano Banana Pro Images per month</p>
+          </div>
+        `;
+      }
+
+      // Slide 6: Value Proposition
+      if (slide.type === 'value-prop') {
+        content = `
+          <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
+            <div class="space-y-2">
+              <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Value Proposition</p>
+              <h2 class="text-3xl sm:text-5xl font-bold leading-tight">Pay $6.17/hour to save 75 hours of work</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl flex flex-col items-center text-center space-y-2 hover:border-emerald-500/30 transition-colors">
+                <div class="text-4xl sm:text-5xl font-bold text-white">99.3%</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wide font-semibold">Less human time</div>
+                <div class="text-xs text-gray-500">(75h → 30min)</div>
               </div>
+              
+              <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl flex flex-col items-center text-center space-y-2 hover:border-emerald-500/30 transition-colors">
+                <div class="text-4xl sm:text-5xl font-bold text-emerald-400">150x</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wide font-semibold">Higher throughput</div>
+                <div class="text-xs text-gray-500">per human-hour</div>
+              </div>
+              
+              <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl flex flex-col items-center text-center space-y-2 hover:border-emerald-500/30 transition-colors">
+                <div class="text-4xl sm:text-5xl font-bold text-white">$6.17<span class="text-2xl">/hr</span></div>
+                <div class="text-sm text-gray-400 uppercase tracking-wide font-semibold">Cost of automation</div>
+                <div class="text-xs text-gray-500">vs €12.82 minimum wage</div>
+              </div>
+              
+              <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl flex flex-col items-center text-center space-y-2 hover:border-emerald-500/30 transition-colors">
+                <div class="text-4xl sm:text-5xl font-bold text-emerald-400">54-85%</div>
+                <div class="text-sm text-gray-400 uppercase tracking-wide font-semibold">Cheaper TCO</div>
+                <div class="text-xs text-gray-500">Total Cost of Ownership</div>
+              </div>
+            </div>
+            
+            <div class="text-center space-y-4">
+              <p class="text-xl sm:text-2xl text-white font-medium">The automation IS the product. Credits are just the fuel.</p>
             </div>
           </div>
         `;
       }
 
-      // Slide 6: Pricing Tiers
+      // Slide 7: Pricing Tiers
       if (slide.type === 'pricing-tiers') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8">
             <div class="space-y-2 text-center">
               <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Proposed Model</p>
-              <h2 class="text-3xl sm:text-4xl font-bold leading-tight">The new model: Subscription + Credits</h2>
+              <h2 class="text-3xl sm:text-4xl font-bold leading-tight">Simple, scalable pricing</h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-stretch">
-              <!-- Pay As You Go -->
-              <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col">
-                <h3 class="text-lg font-bold text-gray-300">Pay As You Go</h3>
-                <div class="text-2xl font-bold text-white mt-2 mb-4">Free</div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto w-full">
+              <!-- Free Tier -->
+              <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col opacity-80 hover:opacity-100 transition-opacity">
+                <h3 class="text-lg font-bold text-gray-300">Free</h3>
+                <div class="text-2xl font-bold text-white mt-2 mb-4">Pay-as-you-go</div>
                 <ul class="space-y-3 text-sm text-gray-400 flex-1">
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> Buy credits as needed</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> 1 at a time</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> 20% markup</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> Free to start</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> Single generation only</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> All models available</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> 20% markup on credits</li>
                 </ul>
               </div>
 
-              <!-- Starter -->
-              <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col">
-                <h3 class="text-lg font-bold text-emerald-300">Starter</h3>
-                <div class="text-2xl font-bold text-white mt-2 mb-4">$99<span class="text-sm font-normal text-gray-500">/mo</span></div>
-                <ul class="space-y-3 text-sm text-gray-400 flex-1">
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> 5,000 credits included ($50 value)</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Batch up to 25</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> 5 templates</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> 15% markup</li>
-                </ul>
-              </div>
-
-              <!-- Pro -->
-              <div class="bg-gray-900 border-2 border-emerald-500 rounded-xl p-6 flex flex-col relative transform scale-105 shadow-2xl shadow-emerald-900/20 z-10">
+              <!-- Pro Tier -->
+              <div class="bg-gray-900 border-2 border-emerald-500 rounded-xl p-8 flex flex-col relative transform scale-105 shadow-2xl shadow-emerald-900/20 z-10">
                 <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
-                <h3 class="text-lg font-bold text-emerald-400">Pro</h3>
-                <div class="text-3xl font-bold text-white mt-2 mb-4">$299<span class="text-sm font-normal text-gray-500">/mo</span></div>
-                <ul class="space-y-3 text-sm text-gray-300 flex-1">
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> 20,000 credits ($200 value)</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Batch up to 100</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Unlimited templates</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Priority queue</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> 15% markup</li>
+                <h3 class="text-xl font-bold text-emerald-400">Pro</h3>
+                <div class="text-4xl font-bold text-white mt-2 mb-4">$500<span class="text-sm font-normal text-gray-500">/mo</span></div>
+                <ul class="space-y-4 text-sm text-gray-300 flex-1">
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> <span class="font-bold text-white">$300 in credits included</span></li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> Full batch automation (AI BOF)</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> Unlimited batch size</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> Priority queue</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> All models available</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-emerald-400"></i> 20% markup on additional credits</li>
                 </ul>
               </div>
 
-              <!-- Business -->
-              <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col">
-                <h3 class="text-lg font-bold text-gray-300">Business</h3>
-                <div class="text-2xl font-bold text-white mt-2 mb-4">$499<span class="text-sm font-normal text-gray-500">/mo</span></div>
+              <!-- Enterprise Tier -->
+              <div class="bg-gray-900/30 border border-gray-800 rounded-xl p-6 flex flex-col opacity-60 grayscale">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-bold text-gray-300">Enterprise</h3>
+                  <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Coming Soon</span>
+                </div>
+                <div class="text-2xl font-bold text-white mt-2 mb-4">Custom</div>
                 <ul class="space-y-3 text-sm text-gray-400 flex-1">
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-500"></i> 50,000 credits ($500 value)</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-500"></i> Unlimited batch</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-500"></i> API access</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-500"></i> Dedicated queue</li>
-                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-500"></i> 10% off overage</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> Volume discounts</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> API access</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> Dedicated support</li>
+                  <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-gray-600"></i> SLA guarantees</li>
                 </ul>
               </div>
             </div>
-
-            <p class="text-center text-sm text-gray-500 mt-4">All tiers include access to every AI model. No models locked behind tiers.</p>
           </div>
         `;
       }
 
-      // Slide 7: Unit Economics
+      // Slide 8: Unit Economics
       if (slide.type === 'unit-economics') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
@@ -361,7 +390,7 @@
                   <tr class="bg-gray-900 border-b border-gray-800 text-gray-400 text-sm uppercase tracking-wider">
                     <th class="p-4 font-semibold">Model</th>
                     <th class="p-4 font-semibold">COGS</th>
-                    <th class="p-4 font-semibold">We Charge (15%)</th>
+                    <th class="p-4 font-semibold">We Charge (20%)</th>
                     <th class="p-4 font-semibold text-emerald-400">Margin</th>
                   </tr>
                 </thead>
@@ -369,32 +398,32 @@
                   <tr class="hover:bg-gray-900/50 transition-colors">
                     <td class="p-4 font-medium text-white">Kling Standard (5s)</td>
                     <td class="p-4">$0.25</td>
-                    <td class="p-4">$0.29</td>
-                    <td class="p-4 text-emerald-400 font-bold">$0.04</td>
+                    <td class="p-4">$0.30</td>
+                    <td class="p-4 text-emerald-400 font-bold">$0.05</td>
                   </tr>
                   <tr class="hover:bg-gray-900/50 transition-colors">
                     <td class="p-4 font-medium text-white">Kling Pro (5s)</td>
                     <td class="p-4">$0.45</td>
-                    <td class="p-4">$0.52</td>
-                    <td class="p-4 text-emerald-400 font-bold">$0.07</td>
+                    <td class="p-4">$0.54</td>
+                    <td class="p-4 text-emerald-400 font-bold">$0.09</td>
                   </tr>
                   <tr class="hover:bg-gray-900/50 transition-colors">
                     <td class="p-4 font-medium text-white">Veo 3.1 Fast (8s)</td>
                     <td class="p-4">$0.60</td>
-                    <td class="p-4">$0.69</td>
-                    <td class="p-4 text-emerald-400 font-bold">$0.09</td>
+                    <td class="p-4">$0.72</td>
+                    <td class="p-4 text-emerald-400 font-bold">$0.12</td>
                   </tr>
                   <tr class="hover:bg-gray-900/50 transition-colors">
                     <td class="p-4 font-medium text-white">Veo 3.1 (8s)</td>
                     <td class="p-4">$1.60</td>
-                    <td class="p-4">$1.84</td>
-                    <td class="p-4 text-emerald-400 font-bold">$0.24</td>
+                    <td class="p-4">$1.92</td>
+                    <td class="p-4 text-emerald-400 font-bold">$0.32</td>
                   </tr>
                   <tr class="hover:bg-gray-900/50 transition-colors">
                     <td class="p-4 font-medium text-white">Image (Nano Banana Pro)</td>
                     <td class="p-4">$0.15</td>
-                    <td class="p-4">$0.17</td>
-                    <td class="p-4 text-emerald-400 font-bold">$0.02</td>
+                    <td class="p-4">$0.18</td>
+                    <td class="p-4 text-emerald-400 font-bold">$0.03</td>
                   </tr>
                 </tbody>
               </table>
@@ -405,22 +434,22 @@
               <div class="flex items-center justify-center gap-4 text-sm sm:text-base text-gray-400">
                 <span>Old margin: 5%</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                <span>New margin on credits: 15%</span>
+                <span>New margin on credits: 20%</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                <span class="text-emerald-400 font-bold">Subscription: pure profit</span>
+                <span class="text-emerald-400 font-bold">Subscription: pure profit ($200/mo)</span>
               </div>
             </div>
           </div>
         `;
       }
 
-      // Slide 8: Revenue Per User
+      // Slide 9: Revenue Per User
       if (slide.type === 'revenue-per-user') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
             <div class="space-y-2">
               <p class="text-emerald-500 font-bold tracking-wider uppercase text-sm">Revenue Per User</p>
-              <h2 class="text-3xl sm:text-5xl font-bold leading-tight">A single Pro subscriber generates $274/month in gross margin.</h2>
+              <h2 class="text-3xl sm:text-5xl font-bold leading-tight">A single Pro subscriber generates ~$300/month in gross margin.</h2>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-8 items-start">
@@ -429,31 +458,31 @@
                 <!-- Subscription Block -->
                 <div class="flex w-full h-16 rounded-lg overflow-hidden">
                   <div class="bg-emerald-600 w-full flex items-center justify-center text-white font-bold relative group">
-                    Subscription Fee: $299
+                    Subscription Fee: $500
                     <span class="absolute top-1 right-2 text-xs bg-emerald-800 px-1.5 py-0.5 rounded opacity-80">100% margin</span>
                   </div>
                 </div>
                 
                 <!-- Cost Deduction -->
                 <div class="flex w-full h-12 rounded-lg overflow-hidden opacity-80">
-                  <div class="bg-red-900/60 w-[58%] flex items-center justify-center text-red-200 text-sm border-r border-gray-900">Included Credits Cost: -$174</div>
-                  <div class="bg-emerald-500/20 w-[42%] flex items-center justify-center text-emerald-300 text-sm font-bold border border-emerald-500/30">Sub Margin: $125</div>
+                  <div class="bg-red-900/60 w-[60%] flex items-center justify-center text-red-200 text-sm border-r border-gray-900">Included Credits Cost: -$300</div>
+                  <div class="bg-emerald-500/20 w-[40%] flex items-center justify-center text-emerald-300 text-sm font-bold border border-emerald-500/30">Sub Margin: $200</div>
                 </div>
 
                 <!-- Overage Block -->
                 <div class="flex w-full h-24 mt-4 rounded-lg overflow-hidden">
                   <div class="bg-gray-800 w-full flex flex-col items-center justify-center text-gray-300 text-sm relative">
-                    <div class="font-bold text-white text-lg mb-1">Overage Revenue: $1,139</div>
+                    <div class="font-bold text-white text-lg mb-1">Overage Revenue: $500</div>
                     <div class="w-full flex h-8 mt-2 px-4 gap-1">
-                      <div class="bg-red-900/40 h-full w-[89%] rounded-l flex items-center justify-center text-xs text-red-300">Cost: -$1,012</div>
-                      <div class="bg-emerald-500/40 h-full w-[11%] rounded-r flex items-center justify-center text-xs text-emerald-200 font-bold">Margin: $127</div>
+                      <div class="bg-red-900/40 h-full w-[80%] rounded-l flex items-center justify-center text-xs text-red-300">Cost: -$400</div>
+                      <div class="bg-emerald-500/40 h-full w-[20%] rounded-r flex items-center justify-center text-xs text-emerald-200 font-bold">Margin: $100</div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Total Result -->
                 <div class="mt-6 p-6 bg-emerald-900/20 border border-emerald-500/50 rounded-xl text-center">
-                  <div class="text-4xl font-bold text-emerald-400">Total margin: ~$274/mo (19%)</div>
+                  <div class="text-4xl font-bold text-emerald-400">Total margin: ~$300/mo (37.5%)</div>
                 </div>
               </div>
 
@@ -465,14 +494,14 @@
                   <div class="text-2xl font-bold text-white">$56/mo margin</div>
                   <div class="text-sm text-gray-500">(5% margin)</div>
                 </div>
-                <div class="text-emerald-400 font-bold text-lg">That's a 5x improvement in margin per user.</div>
+                <div class="text-emerald-400 font-bold text-lg">That's a 5.4x improvement in margin per user.</div>
               </div>
             </div>
           </div>
         `;
       }
 
-      // Slide 9: Projections
+      // Slide 10: Projections
       if (slide.type === 'projections') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
@@ -486,10 +515,10 @@
               <div class="bg-gray-900/30 border border-gray-800 p-6 rounded-xl space-y-4">
                 <div class="text-xl font-bold text-white">10 Pro subscribers</div>
                 <div class="space-y-2">
-                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$14,380/mo</span></div>
-                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">$2,740/mo</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$10,000/mo+</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">~$3,000/mo</span></div>
                   <div class="pt-2 border-t border-gray-800 mt-2">
-                    <div class="text-2xl font-bold text-white">$32,880/yr</div>
+                    <div class="text-2xl font-bold text-white">$36,000/yr</div>
                     <div class="text-xs text-gray-500">Annualized Margin</div>
                   </div>
                 </div>
@@ -502,10 +531,10 @@
               <div class="bg-gray-900/30 border border-gray-800 p-6 rounded-xl space-y-4">
                 <div class="text-xl font-bold text-white">50 Pro subscribers</div>
                 <div class="space-y-2">
-                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$71,900/mo</span></div>
-                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">$13,700/mo</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$50,000/mo+</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">~$15,000/mo</span></div>
                   <div class="pt-2 border-t border-gray-800 mt-2">
-                    <div class="text-2xl font-bold text-white">$164,400/yr</div>
+                    <div class="text-2xl font-bold text-white">$180,000/yr</div>
                     <div class="text-xs text-gray-500">Annualized Margin</div>
                   </div>
                 </div>
@@ -519,10 +548,10 @@
                 <div class="absolute top-0 right-0 w-16 h-16 bg-emerald-500/10 rounded-bl-full -mr-8 -mt-8"></div>
                 <div class="text-xl font-bold text-white">100 Pro subscribers</div>
                 <div class="space-y-2">
-                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$143,800/mo</span></div>
-                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">$27,400/mo</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Revenue</span> <span class="text-white">$100,000/mo+</span></div>
+                  <div class="flex justify-between text-sm text-gray-400"><span>Margin</span> <span class="text-emerald-400 font-bold">~$30,000/mo</span></div>
                   <div class="pt-2 border-t border-gray-800 mt-2">
-                    <div class="text-2xl font-bold text-emerald-300">$328,800/yr</div>
+                    <div class="text-2xl font-bold text-emerald-300">$360,000/yr</div>
                     <div class="text-xs text-gray-500">Annualized Margin</div>
                   </div>
                 </div>
@@ -532,12 +561,29 @@
               </div>
             </div>
 
-            <p class="text-center text-xs text-gray-500 max-w-2xl mx-auto">Assumes all Pro-tier power users. Real mix will include Starter (higher margin %) and Business (lower margin %). Blended margin estimate: 15–20%.</p>
+            <div class="space-y-3">
+              <p class="text-emerald-500 font-bold tracking-wider uppercase text-xs">Estimated Valuation at 100 Pro Subscribers</p>
+              <p class="text-gray-500 text-xs">Based on $1.2M ARR (Subscription Only) · Standard SaaS revenue multiples</p>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 text-center">
+                  <p class="text-gray-500 text-xs mb-1">Conservative (5× ARR)</p>
+                  <p class="text-2xl sm:text-3xl font-bold text-white">$6M</p>
+                </div>
+                <div class="bg-emerald-900/20 border border-emerald-500/40 rounded-xl p-4 text-center">
+                  <p class="text-emerald-400 text-xs mb-1">Moderate (10× ARR)</p>
+                  <p class="text-2xl sm:text-3xl font-bold text-emerald-300">$12M</p>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 text-center">
+                  <p class="text-gray-500 text-xs mb-1">Growth (15× ARR)</p>
+                  <p class="text-2xl sm:text-3xl font-bold text-white">$18M</p>
+                </div>
+              </div>
+            </div>
           </div>
         `;
       }
 
-      // Slide 10: Next Steps
+      // Slide 11: Next Steps
       if (slide.type === 'next-steps') {
         content = `
           <div class="flex flex-col h-full justify-center space-y-8 sm:space-y-12">
@@ -572,29 +618,9 @@
             <div class="bg-emerald-900/20 border border-emerald-500/30 p-6 rounded-xl text-center">
               <p class="text-lg sm:text-xl text-emerald-100 font-medium">
                 Current model: <span class="text-white font-bold">$56/mo</span> margin per user. 
-                New model: <span class="text-emerald-400 font-bold">$274/mo</span>. 
-                Same user, same volume. 
-                <span class="text-emerald-400 font-bold uppercase tracking-wide ml-2">5× the margin.</span>
+                New model: <span class="text-emerald-400 font-bold">$300/mo</span>. 
+                <span class="text-emerald-400 font-bold uppercase tracking-wide ml-2">5.4× the margin.</span>
               </p>
-            </div>
-
-            <div class="space-y-3">
-              <p class="text-emerald-500 font-bold tracking-wider uppercase text-xs">Estimated Valuation at 100 Pro Subscribers</p>
-              <p class="text-gray-500 text-xs">Based on $1.7M ARR · Standard SaaS revenue multiples</p>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 text-center">
-                  <p class="text-gray-500 text-xs mb-1">Conservative (5× ARR)</p>
-                  <p class="text-2xl sm:text-3xl font-bold text-white">$8.6M</p>
-                </div>
-                <div class="bg-emerald-900/20 border border-emerald-500/40 rounded-xl p-4 text-center">
-                  <p class="text-emerald-400 text-xs mb-1">Moderate (10× ARR)</p>
-                  <p class="text-2xl sm:text-3xl font-bold text-emerald-300">$17.3M</p>
-                </div>
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 text-center">
-                  <p class="text-gray-500 text-xs mb-1">Growth (15× ARR)</p>
-                  <p class="text-2xl sm:text-3xl font-bold text-white">$25.9M</p>
-                </div>
-              </div>
             </div>
 
             <div class="text-center pt-4">
